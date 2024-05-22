@@ -102,8 +102,8 @@ const generateImage = async (prompt, nsfwMode, imageEngine) => {
     if(!nsfwMode)
         if(containsBannedWords(prompt))
             return {status: "failed", message: "Your prompt includes banned words."};
-    let result = fs.readFileSync(`./images/${prompt}.txt`, 'utf-8');
-    return {status: "success", image: result, prompt: prompt};
+    // let result = fs.readFileSync(`./images/${prompt}.txt`, 'utf-8');
+    // return {status: "success", image: result, prompt: prompt};
     if(!nsfwMode) {
         data.refiner_checkpoint = "v1-5-pruned.ckpt [e1441589a6]";
     } else {
@@ -120,9 +120,9 @@ const generateImage = async (prompt, nsfwMode, imageEngine) => {
 };
 
 const generatePrompt = async () => {    
-    let samples = ["a strong man", "a man with computer", "a really lovely cute cat", "a man with glass", "a man with woman", "kung fu panda", "no muscle man", "gentle man"]
-    samples.sort(() => Math.random() - 0.5);
-    return samples[0];
+    // let samples = ["a strong man", "a man with computer", "a really lovely cute cat", "a man with glass", "a man with woman", "kung fu panda", "no muscle man", "gentle man"]
+    // samples.sort(() => Math.random() - 0.5);
+    // return samples[0];
     let config = {
         url: process.env.OLLAMA_URL,
         headers: { 
