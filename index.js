@@ -11,7 +11,7 @@ const http = require('http');
 const server = http.createServer(app);
 const io = require('socket.io')(server, {
 	cors: {
-		origin: process.env.SERVER_URL,
+		origin: "http://localhost:7457",
 		methods: ['GET', 'POST'],
 	}
 });

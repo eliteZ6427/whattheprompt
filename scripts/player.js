@@ -196,7 +196,7 @@ class Player {
 		this.broadcast('continue', { playerIndex: this.index, round: this.room.round });
 
 		if (this.room.check()) {
-			if ((this.room.round % this.room.players.length) == 0 && (this.room.round / this.room.players.length) == this.room.roundCount)
+			if ((this.room.round % this.room.players.length) == 0 && (this.room.round / this.room.players.length) == this.room.roundCount || this.room.round >= this.room.roundCount * this.room.players.length)
 				this.room.setState('final');
 			else if ((this.room.round % this.room.players.length) == 0)
 				this.onStart();
